@@ -1,0 +1,23 @@
+{
+  "name": "playwright-demo-suite",
+  "version": "1.0.0",
+  "description": "A professional Playwright E2E test automation portfolio suite targeting SauceDemo.",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:trace": "npx playwright test --trace on",
+    "test:report": "npx playwright show-report",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.24",
+    "dotenv": "^16.5.0",
+    "typescript": "^5.8.3"
+  }
+}
