@@ -1,0 +1,1615 @@
+{
+  "config": {
+    "configFile": "D:\\project\\Playwright\\playwright-demo-suite\\playwright.config.ts",
+    "rootDir": "D:/project/Playwright/playwright-demo-suite/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "D:\\project\\Playwright\\playwright-demo-suite\\global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/project/Playwright/playwright-demo-suite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/project/Playwright/playwright-demo-suite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/project/Playwright/playwright-demo-suite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/project/Playwright/playwright-demo-suite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/project/Playwright/playwright-demo-suite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/project/Playwright/playwright-demo-suite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/project/Playwright/playwright-demo-suite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "D:/project/Playwright/playwright-demo-suite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/project/Playwright/playwright-demo-suite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "D:/project/Playwright/playwright-demo-suite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "network-mocking.spec.ts",
+      "file": "network-mocking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Network Interception & Mocking",
+          "file": "network-mocking.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-M01 | Block images to simulate missing assets / fast loading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:04:48.572Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\network-mocking-Network-In-97490-missing-assets-fast-loading-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d88bd671d3c1adab7fcf-3d9f8352c582c5cacecd",
+              "file": "network-mocking.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "TC-M02 | Inject mock API response (Simulated)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6689,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:04:48.609Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\network-mocking-Network-In-fc9cc-ock-API-response-Simulated--chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d88bd671d3c1adab7fcf-9880a9b6dff5d7016c22",
+              "file": "network-mocking.spec.ts",
+              "line": 27,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "sauce-demo.spec.ts",
+      "file": "sauce-demo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Page",
+          "file": "sauce-demo.spec.ts",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-L01 | Login page loads with all required elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3657,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:04:56.188Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-5e144--with-all-required-elements-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-0b1e418ac5b931d13dc8",
+              "file": "sauce-demo.spec.ts",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "TC-L02 | Standard user logs in successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3908,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:04:56.361Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-d2b80-d-user-logs-in-successfully-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-cf82cfc350445ba72688",
+              "file": "sauce-demo.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "TC-L03 | Locked-out user sees descriptive error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2563,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:00.428Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-1b812-user-sees-descriptive-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-9b91dbb7b3c433cae8a9",
+              "file": "sauce-demo.spec.ts",
+              "line": 58,
+              "column": 7
+            },
+            {
+              "title": "TC-L04 | Wrong password shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2838,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:00.709Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L04-Wrong-password-shows-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-7522b5ad149c58b690ef",
+              "file": "sauce-demo.spec.ts",
+              "line": 72,
+              "column": 9
+            },
+            {
+              "title": "TC-L05 | Unknown username shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2614,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:03.182Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L05-Unknown-username-shows-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-954a9bd22320ca9510df",
+              "file": "sauce-demo.spec.ts",
+              "line": 72,
+              "column": 9
+            },
+            {
+              "title": "TC-L06 | Empty username shows validation error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2693,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:03.705Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-fdf96-name-shows-validation-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-4ed7c446be49d9a012ba",
+              "file": "sauce-demo.spec.ts",
+              "line": 72,
+              "column": 9
+            },
+            {
+              "title": "TC-L07 | Empty password shows validation error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2911,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:06.061Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-97439-word-shows-validation-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-6b81334a7b0d8d371e31",
+              "file": "sauce-demo.spec.ts",
+              "line": 72,
+              "column": 9
+            },
+            {
+              "title": "TC-L08 | Both fields empty shows validation error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2632,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:06.701Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Login-Page-TC-L-d3f3b-mpty-shows-validation-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-ed57350c7a81bb564cf8",
+              "file": "sauce-demo.spec.ts",
+              "line": 72,
+              "column": 9
+            }
+          ]
+        },
+        {
+          "title": "Inventory Page",
+          "file": "sauce-demo.spec.ts",
+          "line": 83,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-I01 | Inventory page displays 6 products",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3797,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:09.203Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--85e5b-ry-page-displays-6-products-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-35382b8e7dbbbafcfdc2",
+              "file": "sauce-demo.spec.ts",
+              "line": 91,
+              "column": 7
+            },
+            {
+              "title": "TC-I02 | Every product card has a name, price and Add-to-Cart button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3205,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:09.631Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--f7a05-rice-and-Add-to-Cart-button-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-6fba9a231907a3b36327",
+              "file": "sauce-demo.spec.ts",
+              "line": 97,
+              "column": 7
+            },
+            {
+              "title": "TC-I03 | Products can be sorted Z→A",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3682,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:13.337Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page-TC-I03-Products-can-be-sorted-Z→A-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-aa95c2b20b2fb2f7ecb9",
+              "file": "sauce-demo.spec.ts",
+              "line": 110,
+              "column": 7
+            },
+            {
+              "title": "TC-I04 | Products can be sorted by price low→high and high→low",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3714,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:13.563Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--df22b-price-low→high-and-high→low-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-06d6865fbe2f2f7bb62a",
+              "file": "sauce-demo.spec.ts",
+              "line": 120,
+              "column": 7
+            },
+            {
+              "title": "TC-I05 | Clicking a product name navigates to its detail page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:17.322Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--e9467-avigates-to-its-detail-page-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-1aaed8f3d0d787d19d39",
+              "file": "sauce-demo.spec.ts",
+              "line": 137,
+              "column": 7
+            },
+            {
+              "title": "TC-I06 | Cart badge count increases when item is added",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2813,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:17.592Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--38ed8-ncreases-when-item-is-added-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-031727c9386036ec0326",
+              "file": "sauce-demo.spec.ts",
+              "line": 146,
+              "column": 7
+            },
+            {
+              "title": "TC-I07 | Cart badge count reflects multiple added items",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2749,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:20.548Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--3b734-flects-multiple-added-items-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-719d4d43db214460679b",
+              "file": "sauce-demo.spec.ts",
+              "line": 152,
+              "column": 7
+            },
+            {
+              "title": "TC-I08 | Add-to-Cart button toggles to Remove after click",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2821,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:20.703Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Inventory-Page--34408-ggles-to-Remove-after-click-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-24e355dab173fde5ec29",
+              "file": "sauce-demo.spec.ts",
+              "line": 160,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Shopping Cart",
+          "file": "sauce-demo.spec.ts",
+          "line": 170,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-C01 | Cart page displays exactly 2 items",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3074,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:23.465Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Shopping-Cart-T-8ae2f-ge-displays-exactly-2-items-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-660cce0a911ff389860a",
+              "file": "sauce-demo.spec.ts",
+              "line": 181,
+              "column": 7
+            },
+            {
+              "title": "TC-C02 | Each cart item shows name, price, quantity and Remove button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3054,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:23.839Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Shopping-Cart-T-4fae0--quantity-and-Remove-button-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-46ca75e21b45311f7a2b",
+              "file": "sauce-demo.spec.ts",
+              "line": 186,
+              "column": 7
+            },
+            {
+              "title": "TC-C03 | Removing an item decrements the cart badge",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3685,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:26.762Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Shopping-Cart-T-ff765-m-decrements-the-cart-badge-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-4ceba0ca5dae216d1e1d",
+              "file": "sauce-demo.spec.ts",
+              "line": 199,
+              "column": 7
+            },
+            {
+              "title": "TC-C04 | Continue Shopping navigates back to inventory",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3284,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:27.206Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Shopping-Cart-T-18749-navigates-back-to-inventory-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-b18a6cb33062e234b77c",
+              "file": "sauce-demo.spec.ts",
+              "line": 205,
+              "column": 7
+            },
+            {
+              "title": "TC-C05 | Checkout button navigates to step one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3374,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:30.695Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Shopping-Cart-T-fe7ad-utton-navigates-to-step-one-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-e4ab7c3a478c7c0baa28",
+              "file": "sauce-demo.spec.ts",
+              "line": 211,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Checkout Flow",
+          "file": "sauce-demo.spec.ts",
+          "line": 220,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CH01 | Step 1: empty form submission shows validation error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3054,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:30.695Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-22675-sion-shows-validation-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-cd8783d0f1b0da3bb551",
+              "file": "sauce-demo.spec.ts",
+              "line": 230,
+              "column": 7
+            },
+            {
+              "title": "TC-CH02 | Step 1: missing last name shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:34.054Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-afc87-ssing-last-name-shows-error-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-b5ea018542a2a9f67360",
+              "file": "sauce-demo.spec.ts",
+              "line": 236,
+              "column": 7
+            },
+            {
+              "title": "TC-CH03 | Step 1: valid data proceeds to step 2",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3296,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:34.278Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-b0c14-lid-data-proceeds-to-step-2-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-02fae6082c9049b55551",
+              "file": "sauce-demo.spec.ts",
+              "line": 245,
+              "column": 7
+            },
+            {
+              "title": "TC-CH04 | Step 2: order summary displays item and totals",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3573,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:37.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-7e8e0-ry-displays-item-and-totals-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-29cb1d3cb491022646bc",
+              "file": "sauce-demo.spec.ts",
+              "line": 254,
+              "column": 7
+            },
+            {
+              "title": "TC-CH05 | Step 2: finishing order shows confirmation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3070,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:38.024Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-f97ad-ng-order-shows-confirmation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-6e779ae32bbfa6a877f3",
+              "file": "sauce-demo.spec.ts",
+              "line": 267,
+              "column": 7
+            },
+            {
+              "title": "TC-CH06 | Confirmation page: Back Home returns to inventory",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3596,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:41.327Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Checkout-Flow-T-b40e0-k-Home-returns-to-inventory-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-c5960e8117b55853e409",
+              "file": "sauce-demo.spec.ts",
+              "line": 279,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Burger Menu & Navigation",
+          "file": "sauce-demo.spec.ts",
+          "line": 294,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-N01 | Burger menu opens with all four links",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3348,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:41.405Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Burger-Menu-Nav-95e78-u-opens-with-all-four-links-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-c64ab6dd2c673ed69c83",
+              "file": "sauce-demo.spec.ts",
+              "line": 300,
+              "column": 7
+            },
+            {
+              "title": "TC-N02 | Logout via burger menu returns user to login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4228,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:44.992Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Burger-Menu-Nav-4635f--menu-returns-user-to-login-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-276f2f5842ccb32dbf79",
+              "file": "sauce-demo.spec.ts",
+              "line": 310,
+              "column": 7
+            },
+            {
+              "title": "TC-N03 | Reset App State clears cart badge",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4455,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:45.192Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Burger-Menu-Nav-1f43b-App-State-clears-cart-badge-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-1b57173a952d2cfc0d7b",
+              "file": "sauce-demo.spec.ts",
+              "line": 318,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Session & Security",
+          "file": "sauce-demo.spec.ts",
+          "line": 334,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-S01 | Unauthenticated access to inventory redirects to login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2339,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:49.866Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Session-Securit-c97a2-nventory-redirects-to-login-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-1012ce9a033e9f234049",
+              "file": "sauce-demo.spec.ts",
+              "line": 339,
+              "column": 7
+            },
+            {
+              "title": "TC-S02 | Unauthenticated access to cart redirects to login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2298,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:50.230Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Session-Securit-b03fa--to-cart-redirects-to-login-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-12aff50b3a31bbd87728",
+              "file": "sauce-demo.spec.ts",
+              "line": 347,
+              "column": 7
+            },
+            {
+              "title": "TC-S03 | After logout, back button does not restore session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3822,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-14T07:05:52.361Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\project\\Playwright\\playwright-demo-suite\\test-results\\sauce-demo-Session-Securit-b3a7a-on-does-not-restore-session-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8affd4a1ae500a6549dc-6a8393cfdfa4de815696",
+              "file": "sauce-demo.spec.ts",
+              "line": 353,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-14T07:04:44.991Z",
+    "duration": 71732.531,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

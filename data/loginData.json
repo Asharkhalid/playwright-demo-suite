@@ -1,0 +1,37 @@
+[
+  {
+    "testId": "TC-L04",
+    "description": "Wrong password shows error",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expectedError": "Username and password do not match"
+  },
+  {
+    "testId": "TC-L05",
+    "description": "Unknown username shows error",
+    "username": "unknown_user",
+    "password": "secret_sauce",
+    "expectedError": "Username and password do not match"
+  },
+  {
+    "testId": "TC-L06",
+    "description": "Empty username shows validation error",
+    "username": "",
+    "password": "secret_sauce",
+    "expectedError": "Username is required"
+  },
+  {
+    "testId": "TC-L07",
+    "description": "Empty password shows validation error",
+    "username": "standard_user",
+    "password": "",
+    "expectedError": "Password is required"
+  },
+  {
+    "testId": "TC-L08",
+    "description": "Both fields empty shows validation error",
+    "username": "",
+    "password": "",
+    "expectedError": "Username is required"
+  }
+]

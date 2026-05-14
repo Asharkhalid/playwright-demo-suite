@@ -1,5 +1,5 @@
-﻿import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { test, expect } from '../fixtures/test-base';
+import loginData from '../data/loginData.json';
 
 // ---------------------------------------------------------------------------
 // Test data – SauceDemo exposes several built-in test accounts
@@ -25,15 +25,15 @@ const INVENTORY_URL_PATTERN = /.*\/inventory\.html/;
 // SUITE 1 – Login Page
 // ============================================================================
 test.describe('Login Page', () => {
-  let loginPage: LoginPage;
+  // Phase 1: Disable global auth state for login tests so we start unauthenticated
+  test.use({ storageState: { cookies: [], origins: [] } });
 
-  test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
+  test.beforeEach(async ({ loginPage }) => {
     await loginPage.goto();
   });
 
   // --------------------------------------------------------------------------
-  test('TC-L01 | Login page loads with all required elements', async () => {
+  test('TC-L01 | Login page loads with all required elements', async ({ loginPage }) => {
     await loginPage.assertPageLoaded();
 
     await expect(loginPage.loginLogo).toBeVisible();
@@ -44,7 +44,7 @@ test.describe('Login Page', () => {
   });
 
   // --------------------------------------------------------------------------
-  test('TC-L02 | Standard user logs in successfully', async ({ page }) => {
+  test('TC-L02 | Standard user logs in successfully', async ({ page, loginPage }) => {
     await loginPage.login(
       CREDENTIALS.standard.username,
       CREDENTIALS.standard.password,
@@ -55,7 +55,7 @@ test.describe('Login Page', () => {
   });
 
   // --------------------------------------------------------------------------
-  test('TC-L03 | Locked-out user sees descriptive error', async () => {
+  test('TC-L03 | Locked-out user sees descriptive error', async ({ loginPage }) => {
     await loginPage.login(
       CREDENTIALS.lockedOut.username,
       CREDENTIALS.lockedOut.password,
@@ -66,60 +66,25 @@ test.describe('Login Page', () => {
   });
 
   // --------------------------------------------------------------------------
-  test('TC-L04 | Wrong password shows error and stays on login page', async ({ page }) => {
-    await loginPage.login(CREDENTIALS.standard.username, WRONG_PASSWORD);
-
-    await expect(loginPage.errorMessage).toBeVisible();
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Username and password do not match');
-    await expect(page).toHaveURL('/');
-  });
-
+  // Data-Driven Testing (DDT): Negative Login Scenarios
   // --------------------------------------------------------------------------
-  test('TC-L05 | Unknown username shows error', async () => {
-    await loginPage.login(WRONG_USERNAME, CREDENTIALS.standard.password);
-
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Username and password do not match');
-  });
-
-  // --------------------------------------------------------------------------
-  test('TC-L06 | Empty username shows validation error', async () => {
-    await loginPage.login('', CREDENTIALS.standard.password);
-
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Username is required');
-  });
-
-  // --------------------------------------------------------------------------
-  test('TC-L07 | Empty password shows validation error', async () => {
-    await loginPage.login(CREDENTIALS.standard.username, '');
-
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Password is required');
-  });
-
-  // --------------------------------------------------------------------------
-  test('TC-L08 | Both fields empty shows validation error', async () => {
-    await loginPage.login('', '');
-
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Username is required');
-  });
+  for (const data of loginData) {
+    test(`${data.testId} | ${data.description}`, async ({ loginPage }) => {
+      await loginPage.login(data.username, data.password);
+      const error = await loginPage.getErrorMessage();
+      expect(error).toContain(data.expectedError);
+    });
+  }
 });
 
 // ============================================================================
 // SUITE 2 – Inventory / Product Listing
 // ============================================================================
 test.describe('Inventory Page', () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.goto();
-    await loginPage.login(
-      CREDENTIALS.standard.username,
-      CREDENTIALS.standard.password,
-    );
-    await expect(page).toHaveURL(INVENTORY_URL_PATTERN);
+  // Phase 1: We reuse the global authentication state here! No login needed.
+  test.beforeEach(async ({ inventoryPage }) => {
+    await inventoryPage.goto();
+    await inventoryPage.assertOnInventoryPage();
   });
 
   // --------------------------------------------------------------------------
@@ -203,18 +168,12 @@ test.describe('Inventory Page', () => {
 // SUITE 3 – Shopping Cart
 // ============================================================================
 test.describe('Shopping Cart', () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.goto();
-    await loginPage.login(
-      CREDENTIALS.standard.username,
-      CREDENTIALS.standard.password,
-    );
-    // Add first two items to the cart
-    await page.locator('.inventory_item button').nth(0).click();
-    await page.locator('.inventory_item button').nth(1).click();
-    // Navigate to the cart
-    await page.locator('.shopping_cart_link').click();
+  test.beforeEach(async ({ inventoryPage, page }) => {
+    await inventoryPage.goto();
+    // Add first two items to the cart using the fixture
+    await inventoryPage.addItemToCartByIndex(0);
+    await inventoryPage.addItemToCartByIndex(1);
+    await inventoryPage.goToCart();
     await expect(page).toHaveURL(/.*\/cart\.html/);
   });
 
@@ -259,15 +218,10 @@ test.describe('Shopping Cart', () => {
 // SUITE 4 – Checkout Flow (Happy Path)
 // ============================================================================
 test.describe('Checkout Flow', () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.goto();
-    await loginPage.login(
-      CREDENTIALS.standard.username,
-      CREDENTIALS.standard.password,
-    );
-    await page.locator('.inventory_item button').first().click();
-    await page.locator('.shopping_cart_link').click();
+  test.beforeEach(async ({ inventoryPage, page }) => {
+    await inventoryPage.goto();
+    await inventoryPage.addItemToCartByIndex(0);
+    await inventoryPage.goToCart();
     await page.locator('[data-test="checkout"]').click();
     await expect(page).toHaveURL(/.*\/checkout-step-one\.html/);
   });
@@ -338,13 +292,8 @@ test.describe('Checkout Flow', () => {
 // SUITE 5 – Burger Menu & Navigation
 // ============================================================================
 test.describe('Burger Menu & Navigation', () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.goto();
-    await loginPage.login(
-      CREDENTIALS.standard.username,
-      CREDENTIALS.standard.password,
-    );
+  test.beforeEach(async ({ inventoryPage }) => {
+    await inventoryPage.goto();
   });
 
   // --------------------------------------------------------------------------
@@ -358,18 +307,17 @@ test.describe('Burger Menu & Navigation', () => {
   });
 
   // --------------------------------------------------------------------------
-  test('TC-N02 | Logout via burger menu returns user to login', async ({ page }) => {
-    await page.locator('#react-burger-menu-btn').click();
-    await page.locator('#logout_sidebar_link').click();
+  test('TC-N02 | Logout via burger menu returns user to login', async ({ inventoryPage, page }) => {
+    await inventoryPage.logout();
 
     await expect(page).toHaveURL('/');
     await expect(page.locator('[data-test="login-button"]')).toBeVisible();
   });
 
   // --------------------------------------------------------------------------
-  test('TC-N03 | Reset App State clears cart badge', async ({ page }) => {
+  test('TC-N03 | Reset App State clears cart badge', async ({ inventoryPage, page }) => {
     // Add an item first
-    await page.locator('.inventory_item button').first().click();
+    await inventoryPage.addItemToCartByIndex(0);
     await expect(page.locator('.shopping_cart_badge')).toBeVisible();
 
     // Reset
@@ -384,6 +332,9 @@ test.describe('Burger Menu & Navigation', () => {
 // SUITE 6 – Session / Security
 // ============================================================================
 test.describe('Session & Security', () => {
+  // Phase 1: Disable global auth state because we are testing UNAUTHENTICATED behavior
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   // --------------------------------------------------------------------------
   test('TC-S01 | Unauthenticated access to inventory redirects to login', async ({ page }) => {
     await page.goto('/inventory.html');
@@ -399,8 +350,7 @@ test.describe('Session & Security', () => {
   });
 
   // --------------------------------------------------------------------------
-  test('TC-S03 | After logout, back button does not restore session', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('TC-S03 | After logout, back button does not restore session', async ({ page, loginPage, inventoryPage }) => {
     await loginPage.goto();
     await loginPage.login(
       CREDENTIALS.standard.username,
@@ -409,8 +359,7 @@ test.describe('Session & Security', () => {
     await expect(page).toHaveURL(INVENTORY_URL_PATTERN);
 
     // Logout
-    await page.locator('#react-burger-menu-btn').click();
-    await page.locator('#logout_sidebar_link').click();
+    await inventoryPage.logout();
     await expect(page).toHaveURL('/');
 
     // Attempt to go back

@@ -1,13 +1,11 @@
-﻿import { Page, Locator } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
+import { BasePage } from './base/BasePage';
 
 // ---------------------------------------------------------------------------
 // LoginPage – Page Object Model
 // Encapsulates all selectors and actions for the SauceDemo login screen.
 // ---------------------------------------------------------------------------
-export class LoginPage {
-  // ── Page reference ──────────────────────────────────────────────────────
-  readonly page: Page;
-
+export class LoginPage extends BasePage {
   // ── Locators ────────────────────────────────────────────────────────────
   readonly usernameInput: Locator;
   readonly passwordInput: Locator;
@@ -17,7 +15,7 @@ export class LoginPage {
   readonly loginLogo: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
 
     // Using data-test attributes where available (most stable selectors)
     this.usernameInput   = page.locator('[data-test="username"]');
@@ -32,20 +30,18 @@ export class LoginPage {
 
   /** Navigate directly to the SauceDemo login page. */
   async goto(): Promise<void> {
-    await this.page.goto('/');
+    await this.navigateTo('/');
   }
 
   // ── Actions ─────────────────────────────────────────────────────────────
 
   /**
-   * Fill in credentials and click Login.
-   * @param username - SauceDemo username
-   * @param password - SauceDemo password
+   * Fill in credentials and click Login using BasePage robust actions.
    */
   async login(username: string, password: string): Promise<void> {
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
+    await this.waitAndFill(this.usernameInput, username);
+    await this.waitAndFill(this.passwordInput, password);
+    await this.waitAndClick(this.loginButton);
   }
 
   /**
@@ -61,7 +57,7 @@ export class LoginPage {
 
   /** Dismiss the error banner by clicking the × button. */
   async dismissError(): Promise<void> {
-    await this.errorCloseButton.click();
+    await this.waitAndClick(this.errorCloseButton);
   }
 
   // ── Assertions (reusable expect helpers) ────────────────────────────────

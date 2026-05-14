@@ -1,0 +1,77 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright tests
+      run: npx playwright test
+      
+    # Upload the HTML report as an artifact so it can be viewed later
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+
+  # -------------------------------------------------------------------------
+  # OPTIONAL: Publish HTML Report to GitHub Pages
+  # -------------------------------------------------------------------------
+  # To enable this, go to your repository Settings -> Pages -> Source: Github Actions
+  publish_report:
+    name: Publish HTML Report to GitHub Pages
+    # Only run on pushes to main (not PRs) and only if the test job completed
+    if: github.event_name == 'push' && always()
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Download HTML report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: playwright-report
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

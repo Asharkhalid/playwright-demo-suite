@@ -1,4 +1,4 @@
-﻿import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   // Root directory for test discovery
@@ -16,6 +16,9 @@ export default defineConfig({
   // Limit parallel workers on CI to avoid flakiness
   workers: process.env.CI ? 2 : undefined,
 
+  // Global setup to run before all tests (for auth)
+  globalSetup: require.resolve('./global-setup'),
+
   // ---------------------------------------------------------------------------
   // Reporters
   // ---------------------------------------------------------------------------
@@ -30,6 +33,9 @@ export default defineConfig({
   // ---------------------------------------------------------------------------
   use: {
     baseURL: 'https://www.saucedemo.com',
+
+    // Reuse the auth state saved by global setup
+    storageState: '.auth/user.json',
 
     // Capture trace on first retry to aid debugging (viewable in trace viewer)
     trace: 'on-first-retry',
