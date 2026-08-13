@@ -1,4 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const BASE_URL = process.env.BASE_URL || 'https://www.saucedemo.com';
 
 export default defineConfig({
   // Root directory for test discovery
@@ -32,7 +37,7 @@ export default defineConfig({
   // Shared settings for every test
   // ---------------------------------------------------------------------------
   use: {
-    baseURL: 'https://www.saucedemo.com',
+    baseURL: BASE_URL,
 
     // Reuse the auth state saved by global setup
     storageState: '.auth/user.json',

@@ -4,20 +4,23 @@
   "description": "A professional Playwright E2E test automation portfolio suite targeting SauceDemo.",
   "private": true,
   "scripts": {
-    "test": "npx playwright test",
-    "test:headed": "npx playwright test --headed",
+    "test": "npx playwright test && npm run test:metrics",
+    "test:headed": "npx playwright test --headed && npm run test:metrics",
     "test:ui": "npx playwright test --ui",
     "test:debug": "npx playwright test --debug",
     "test:trace": "npx playwright test --trace on",
     "test:report": "npx playwright show-report",
-    "test:chrome": "npx playwright test --project=chromium",
-    "test:firefox": "npx playwright test --project=firefox",
-    "test:webkit": "npx playwright test --project=webkit"
+    "test:chrome": "npx playwright test --project=chromium && npm run test:metrics",
+    "test:firefox": "npx playwright test --project=firefox && npm run test:metrics",
+    "test:webkit": "npx playwright test --project=webkit && npm run test:metrics",
+    "test:metrics": "npx ts-node scripts/generate-metrics.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.24",
+    "axe-playwright": "^1.2.3",
     "dotenv": "^16.5.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
